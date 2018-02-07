@@ -5,9 +5,12 @@ import {
 } from 'react-router-dom';
 
 export const FreakingAwesomeNavLink = ( {label, to, activeOnlyWhenExact, generalClassName} ) => {
+    console.log(to);
     return (
       <Route path={to} exact={activeOnlyWhenExact} children={ ({match}) => {
-        console.log(match)
+        console.log('Creating a custom link...');
+        console.log(match);
+        console.log(to);
         return (
         <li className={`${generalClassName}${match ? ' active' : ''}`}>
           <Link to={to} style={ {fontWeight: 'normal'} }>{label}</Link>
@@ -15,7 +18,7 @@ export const FreakingAwesomeNavLink = ( {label, to, activeOnlyWhenExact, general
         )}
       } />
     );
-}
+};
 
 export const DisplayMessage = props => {
 
@@ -28,4 +31,11 @@ export const DisplayMessage = props => {
 
 export const GetUserName = (userId, users) => {
   return users.find( user => user.id === userId ).name;
-}
+};
+
+export const CreateUid = () => {
+    // Math.random should be unique because of its seeding algorithm.
+    // Convert it to base 36 (numbers + letters), and grab the first 9 characters
+    // after the decimal.
+    return Math.random().toString(36).substr(2, 15);
+};

@@ -16,7 +16,7 @@ const UserView = props => {
             <AddUser/>
             {thereAreUsers &&
                 <div style={ {width: '100%'} } className="bg-black padding-medium">
-                    <UserNav />
+                    <UserNav {...props} />
                 </div>
             }
             <div>

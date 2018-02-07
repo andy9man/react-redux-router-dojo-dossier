@@ -1,15 +1,16 @@
 import {TAB_SELECTED, ADD_ITEM, ADD_USER, ITEM_INPUT} from './actions.js';
+import {CreateUid} from '../components/helpers';
 
 class User {
     constructor(name) {
-        this.id = `user-${Date.now()}`;
+        this.id = `user-${CreateUid()}`;
         this.name = name;
     }
 }
 
 class Item {
     constructor(userId, title) {
-        this.id = `item-${Date.now()}`;
+        this.id = `item-${CreateUid()}`;
         this.userId = userId;
         this.title = title;
     }
@@ -18,16 +19,16 @@ class Item {
 const initialState = {
     currentUser: undefined,
     newItem: '',
-    users: [],
-    items: []
-//     users: [
-//         new User('Rachel'),
-//         new User('Monica'),
-//         new User('Phoebe'),
-//         new User('Joey'),
-//         new User('Chandler'),
-//         new User('Ross')
-//     ]
+    //users: [],
+    items: [],
+    users: [
+        new User('Rachel'),
+        new User('Monica'),
+        new User('Phoebe'),
+        new User('Joey'),
+        new User('Chandler'),
+        new User('Ross')
+    ]
 }
 
 export const reducer = ( state={...initialState, currentTab: 0}, action ) => {
