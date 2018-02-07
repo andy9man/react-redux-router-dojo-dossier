@@ -9,7 +9,6 @@ const UserNav = props => {
             <ul className="tabs ghost">
                 {
                     props.users.length > 0 && props.users.map( (user, index) => {
-                        //console.log(tab);
                         return (
                             <CustomNav key={user.id} to={`/users/${user.id}`} label={user.name} generalClassName="tab-title" activeOnlyWhenExact={true} />
                         )

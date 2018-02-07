@@ -8,9 +8,6 @@ export const FreakingAwesomeNavLink = ( {label, to, activeOnlyWhenExact, general
     console.log(to);
     return (
       <Route path={to} exact={activeOnlyWhenExact} children={ ({match}) => {
-        console.log('Creating a custom link...');
-        console.log(match);
-        console.log(to);
         return (
         <li className={`${generalClassName}${match ? ' active' : ''}`}>
           <Link to={to} style={ {fontWeight: 'normal'} }>{label}</Link>
