@@ -8,7 +8,7 @@ import {
 } from 'react-router-dom';
 import './index.css';
 import './ui-toolkit/css/nm-cx/main.css';
-import store from './state/store.js';
+import store from './store';
 import UserView from './views/UserView';
 import TodoView from './views/TodoView';
 import {FreakingAwesomeNavLink as CustomNav} from './components/helpers';

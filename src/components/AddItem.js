@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import { ADD_ITEM } from '../state/actions';
+import { ADD_ITEM } from '../store/actions';
 
 class AddItem extends Component {
     constructor(props) {
