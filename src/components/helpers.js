@@ -5,7 +5,6 @@ import {
 } from 'react-router-dom';
 
 export const FreakingAwesomeNavLink = ( {label, to, activeOnlyWhenExact, generalClassName} ) => {
-    console.log(to);
     return (
       <Route path={to} exact={activeOnlyWhenExact} children={ ({match}) => {
         return (
